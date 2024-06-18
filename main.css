@@ -128,6 +128,10 @@ hr {
   cursor: pointer;
 }
 
+.faq__question:hover {
+  color: hsl(281, 83%, 54%);
+}
+
 .faq__question::marker {
   content: "";
 }
