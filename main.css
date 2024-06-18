@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "WorkSans";
+  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+:root {
+  /* --- ## colors --- */
+  --clr-dark: 292, 42%, 14%;
+  --clr-grayish: 292, 16%, 49%;
+  --clr-light: 275, 100%, 97%;
+  --clr-white: 0, 0%, 100%;
+
+  /* --- ## font sizes --- */
+
+  --fs-regular: 1rem; /* 16px */
+  --fs-medium: 1.125rem; /* 18px */
+  --fs-large: 3.5rem; /* 56px */
+
+  /* --- ## font weights --- */
+
+  --fw-semibold: 600;
+}
+
+/* === ## JOSH CAMEOU'S RESET === */
+/* LINK: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* === # MAIN STYLING === */
+
+body {
+  background: url(assets/images/background-pattern-desktop.svg) no-repeat fixed
+      top,
+    hsl(var(--clr-light));
+  background-size: 100%;
+  font-family: "WorkSans";
+  font-size: var(--fs-regular);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  border: 1px solid hsl(var(--clr-light));
+}
+
+.faq {
+  width: 600px;
+  margin: 10.5rem 1.5rem;
+  padding: 1.9rem 2.5rem;
+  background: hsl(var(--clr-white));
+  border-radius: 1rem;
+  box-shadow: 0 16px 46px 10px hsla(var(--clr-dark), 0.15);
+}
+
+.faq__header {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.faq__header h1 {
+  font-size: var(--fs-large);
+  color: hsl(var(--clr-dark));
+}
+
+.faq__content {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.faq__question {
+  font-size: var(--fs-medium);
+  color: hsl(var(--clr-dark));
+  font-weight: var(--fw-semibold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.faq__question::marker {
+  content: "";
+}
+
+.faq__question::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-image: url(assets/images/icon-plus.svg);
+  aspect-ratio: 1 / 1;
+}
+
+.faq__accordion[open] .faq__question::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-image: url(assets/images/icon-minus.svg);
+}
+
+.faq__answer {
+  margin-top: 1.5rem;
+  color: hsl(var(--clr-grayish));
+}
+
+/* === # ATTRIBUTION === */
+
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+@media screen and (max-width: 500px) {
+  :root {
+    --fs-regular: 0.875rem; /* 14px */
+    --fs-medium: 1rem; /* 16px */
+    --fs-large: 2rem; /* 32px */
+  }
+
+  body {
+    background-image: url(assets/images/background-pattern-mobile.svg);
+  }
+
+  .faq {
+    margin-top: 8.9rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .faq__header img {
+    width: 24px;
+  }
+
+  .faq__content {
+    margin-top: 1.175rem;
+    line-height: 1.2;
+  }
+
+  .faq__answer {
+    line-height: 1.5;
+  }
+}
